@@ -1,5 +1,5 @@
 ## Data Structure - Cấu trúc dữ liệu và giải thuật
-**Binar search
+**Binar search**<br>
 Gồm những tính năng (features): <br>
 
 * Login với email
