@@ -13,7 +13,6 @@ Ngoài ra, code còn sử dụng thêm một số kiến thức của Nhập mô
 
 Ngoài ra, code còn sử dụng thêm một số kiến thức của Kĩ thuật lập trình:
 * Con trỏ (pointer), khai báo con trỏ
-* Queue
 * Tham chiếu (reference)
 * ..
 
