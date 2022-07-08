@@ -254,7 +254,7 @@ bool operator<(Student first, Student second){
 }
 
 bool operator>(Student first, Student second){
-    return first.name > second.name;
+    return first.id > second.id;
 }
 
 Student Input()
@@ -292,7 +292,7 @@ bool operator<<(Student first, Student second){
 }
 
 bool operator>>(Student first, Student second){
-    return first.id > second.id;
+    return first.name > second.name;
 }
 BSTNode* InsertByName(BSTNode*& root, Student key)
 {
