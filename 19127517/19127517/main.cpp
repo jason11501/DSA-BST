@@ -29,7 +29,8 @@ NODE* createNODE(string key)
     return t;
 }
 
-void LNR(NODE* pRoot)
+template <class T>
+void LNR(T pRoot)
 {
     if(pRoot==NULL)
         return;
@@ -96,7 +97,6 @@ struct Array
 
 int linearSearch(Array& a, string checking)
 {
-    
     for (int i=0; i<a.size; i++) {
         if (a[i].compare(checking)==0)
             return i;
@@ -226,6 +226,7 @@ void removeSearch(NODE*& t, string x)
         }
     }
 }
+
 void removeAll(NODE*& t)
 {
     while (t)
@@ -238,6 +239,7 @@ struct Student{
     string birth;
     bool status;
 };
+
 struct BSTNode {
     Student key;
     BSTNode* left, * right;
@@ -249,6 +251,7 @@ struct BSTNode {
     }
     
 };
+
 bool operator<(Student first, Student second){
     return first.id < second.id;
 }
@@ -287,6 +290,7 @@ BSTNode* InsertByID(BSTNode*& root, Student key)
     }
     return new BSTNode(key);
 }
+
 bool operator<<(Student first, Student second){
     return first.name < second.name;
 }
@@ -294,6 +298,7 @@ bool operator<<(Student first, Student second){
 bool operator>>(Student first, Student second){
     return first.name > second.name;
 }
+
 BSTNode* InsertByName(BSTNode*& root, Student key)
 {
     if (root)
@@ -329,6 +334,7 @@ BSTNode* InsertByStatus(BSTNode*& root, Student key)
     }
     return new BSTNode(key);
 }
+
 void BuildTree(BSTNode* &root, int n)
 {
     cout<< "Input Student from keyboard\n";
@@ -337,6 +343,7 @@ void BuildTree(BSTNode* &root, int n)
         root = InsertByID(root, Input());
     }
 }
+
 BSTNode* searchIDAndUpdate(BSTNode* t, string id)
 {
     if (t == NULL)
@@ -353,6 +360,7 @@ BSTNode* searchIDAndUpdate(BSTNode* t, string id)
         else
             return searchIDAndUpdate(t->right, id);
 }
+
 ostream& operator<<(ostream& out, Student e)
 {
     out << e.name << ", " << e.id << ", " << e.birth << ", " << e.status << '\n';
@@ -381,6 +389,7 @@ BSTNode* FindSub(BSTNode* node)
         node = node->right;
     return node;
 }
+
 BSTNode* Delete(BSTNode* root, string val, bool& del)
 {
     if (root)
@@ -437,6 +446,7 @@ bool DeleteByID(BSTNode*& root, string id)
     root = Delete(root, id, del);
     return del;
 }
+
 void LNRCheckGraduates(BSTNode* pRoot, bool &flag)
 {
     if(pRoot==NULL)
@@ -453,6 +463,7 @@ void LNRCheckGraduates(BSTNode* pRoot, bool &flag)
 
     }
 }
+
 bool DeleteAllGraduates(BSTNode*& root)
 {
     bool del = false;
@@ -473,19 +484,6 @@ bool DeleteAllGraduates(BSTNode*& root)
     return del;
 }
 
-void LNR(BSTNode* pRoot)
-{
-    if(pRoot==NULL)
-        return;
-    else
-    {
-        LNR(pRoot->left);
-        cout<<pRoot->key<<"";
-        LNR(pRoot->right);
-        
-    }
-}
-
 void DeleteTree(BSTNode* root)
 {
     if (root)
@@ -495,6 +493,7 @@ void DeleteTree(BSTNode* root)
         delete root;
     }
 }
+
 int main() {
 //6.1
     NODE* t;
