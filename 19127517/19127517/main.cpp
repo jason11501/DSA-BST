@@ -344,7 +344,7 @@ void BuildTree(BSTNode* &root, int n)
     }
 }
 
-BSTNode* searchIDAndUpdate(BSTNode* t, string id)
+BSTNode* searchIDAndUpdate(BSTNode* &t, string id)
 {
     if (t == NULL)
         return NULL;
